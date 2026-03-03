@@ -1,6 +1,4 @@
-/* =========================================================
-   6) MINI GAME (MOLEBOX) — RETRO ARCADE / CRT STYLE
-   =======================================================*/
+
 .molebox {
     --crt-green: #9aff57;
     --crt-amber: #ffda7b;
@@ -30,7 +28,6 @@ body.dark .molebox {
         inset 0 0 0 4px #050607;
 }
 
-/* scanlines + vignette */
 .molebox::before,
 .molebox::after {
     content: "";
@@ -60,7 +57,6 @@ body.dark .molebox {
     }
 }
 
-/* Grid rows */
 .toprow,
 .midrow,
 .botrow {
@@ -69,7 +65,6 @@ body.dark .molebox {
     margin: .22rem 0;
 }
 
-/* Holes */
 .hole {
     width: 82px;
     height: 82px;
@@ -106,7 +101,6 @@ body.dark .hole {
         inset 0 -8px 14px rgba(255, 255, 255, .04);
 }
 
-/* Click ripple */
 .hole::after {
     content: "";
     position: absolute;
@@ -137,7 +131,6 @@ body.dark .hole {
     }
 }
 
-/* Dog sprite */
 .dog {
     position: absolute;
     left: 50%;
@@ -188,7 +181,6 @@ body.dark .hole {
     }
 }
 
-/* HUD */
 .meters {
     font-weight: 800;
     letter-spacing: .3px;
@@ -202,7 +194,6 @@ body.dark .meters {
     color: var(--fg-dark);
 }
 
-/* Buttons (merged) */
 #startBtn,
 #restartBtn {
     font-family: inherit;
@@ -250,9 +241,6 @@ body.dark #restartBtn {
     box-shadow: 0 2px 6px #0002 inset;
 }
 
-/* =========================================================
-   Zoom-out Finale Overlay (shown when lives run out)
-   =======================================================*/
 .overlay {
     position: fixed;
     inset: 0;
@@ -268,7 +256,6 @@ body.dark #restartBtn {
     display: none !important;
 }
 
-/* Dog in overlay: no default animation; we trigger .boom */
 .zoomdog {
     width: 120px;
     height: 120px;
@@ -277,12 +264,10 @@ body.dark #restartBtn {
     backface-visibility: hidden;
 }
 
-/* Play this when MISS_LIMIT reached */
 .zoomdog.boom {
     animation: zoomout 1.6s cubic-bezier(.22, .86, .27, .98) forwards;
 }
 
-/* Big cinematic zoom-out */
 @keyframes zoomout {
     0% {
         transform: scale(1) rotate(0deg);
@@ -307,9 +292,6 @@ body.dark #restartBtn {
     }
 }
 
-/* =========================================================
-   Responsive
-   =======================================================*/
 @media (max-width: 360px) {
     .hole {
         width: 74px;
