@@ -1,6 +1,3 @@
-/* =========================================================
-   Horizontal Timeline – Proper, Smooth, Responsive
-   =======================================================*/
 
 .timeline-horz__progress {
     position: sticky;
@@ -20,28 +17,23 @@
     transition: width 0.08s ease-out;
 }
 
-/* Wrapper is the horizontal scroller */
 .timeline-horz__wrapper {
     position: relative;
     overflow-x: auto;
     padding: 1rem 0;
     scroll-snap-type: x mandatory;
     scroll-padding: 1rem 2rem;
-    /* snap padding to match inner padding */
     -webkit-overflow-scrolling: touch;
 }
 
-/* The row of cards */
 .timeline-horz {
     display: flex;
     gap: 2rem;
     padding: 1rem 2rem;
     list-style: none;
     min-width: max-content;
-    /* keeps a single row */
 }
 
-/* Individual card */
 .timeline-horz__item {
     scroll-snap-align: center;
     flex: 0 0 auto;
@@ -74,7 +66,6 @@
     box-shadow: 0 0 16px var(--accent), inset 0 0 6px var(--accent);
 }
 
-/* Glowing connector dot */
 .timeline-horz__dot {
     position: absolute;
     top: -14px;
@@ -100,7 +91,6 @@
     }
 }
 
-/* Timeline content */
 .timeline-horz__year {
     display: inline-block;
     font-size: 0.75rem;
@@ -137,10 +127,6 @@
     line-height: 1.4;
 }
 
-/* ======================
-   Dark Mode
-====================== */
-
 body.dark .timeline-horz__item {
     background: var(--glass-dark);
     border-color: var(--accent-dark);
@@ -163,10 +149,6 @@ body.dark .timeline-horz__blurb {
     color: var(--fg-dark);
 }
 
-/* ======================
-   Scrollbar
-====================== */
-
 .timeline-horz__wrapper::-webkit-scrollbar {
     height: 6px;
 }
@@ -180,9 +162,6 @@ body.dark .timeline-horz__wrapper::-webkit-scrollbar-thumb {
     background: var(--accent-dark);
 }
 
-/* ======================
-   Reduced Motion
-====================== */
 @media (prefers-reduced-motion: reduce) {
 
     .timeline-horz__item,
@@ -198,10 +177,6 @@ body.dark .timeline-horz__wrapper::-webkit-scrollbar-thumb {
         animation: none;
     }
 }
-
-/* ======================
-   Responsive
-====================== */
 
 @media (max-width: 480px) {
     .timeline-horz__item {
