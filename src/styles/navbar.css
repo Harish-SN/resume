@@ -1,0 +1,215 @@
+/* =========================================================
+   NAVBAR
+   =======================================================*/
+.navbar {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 56px;
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 1.3rem;
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+}
+
+body.dark .navbar {
+    background: var(--glass-dark);
+}
+
+/* Side containers */
+.nav-side {
+    display: flex;
+    align-items: center;
+}
+
+.nav-side.left {
+    justify-content: flex-start;
+}
+
+.nav-side.right {
+    justify-content: flex-end;
+    gap: .8rem;
+}
+
+/* Brand */
+.brand {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+body.dark .brand {
+    color: var(--accent-dark);
+}
+
+.cursor-blink {
+    display: inline-block;
+    width: .5ch;
+    animation: blinkBrand 1s steps(1) infinite;
+    opacity: .65;
+}
+
+@keyframes blinkBrand {
+    50% { opacity: 0; }
+}
+
+/* =========================================================
+   CENTER NAV
+   =======================================================*/
+.nav-links {
+    justify-self: center;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+    position: relative;
+}
+
+/* =========================================================
+   THEME TOGGLE
+   =======================================================*/
+.toggle input {
+    display: none;
+}
+
+.thumb {
+    width: 48px;
+    height: 24px;
+    padding: 3px;
+    border-radius: 24px;
+    background: var(--glass);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    transition: .35s;
+    position: relative;
+}
+
+body.dark .thumb {
+    background: var(--glass-dark);
+}
+
+.sun,
+.moon {
+    font-size: .9rem;
+    position: absolute;
+    transition: .35s;
+}
+
+.sun { left: 6px; }
+.moon { right: 6px; opacity: 0; }
+
+input:checked + .thumb .sun { opacity: 0; }
+input:checked + .thumb .moon { opacity: 1; }
+
+/* =========================================================
+   HAMBURGER
+   =======================================================*/
+.hamburger {
+    display: none;
+    width: 36px;
+    height: 28px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    color: var(--accent);
+}
+
+body.dark .hamburger {
+    color: var(--accent-dark);
+}
+
+.hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: currentColor;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    transition: transform .25s, opacity .2s;
+}
+
+.hamburger span:nth-child(1) { top: 5px; }
+.hamburger span:nth-child(2) { top: 13px; }
+.hamburger span:nth-child(3) { top: 21px; }
+
+.hamburger.is-open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.is-open span:nth-child(2) { opacity: 0; }
+.hamburger.is-open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================================================
+   MOBILE DRAWER (SOLID + NARROW)
+   =======================================================*/
+@media (max-width: 780px) {
+
+    .navbar {
+        grid-template-columns: auto auto;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 64px;
+
+        /* 🔥 NARROW + CENTERED */
+        left: 50%;
+        transform: translate(-50%, -10px);
+
+        max-width: 440px;
+        width: 92%;
+
+        z-index: 999;
+
+        /* Light mode */
+        background: #ffffff;
+        color: #111;
+
+        border-radius: 14px;
+        border: 1px solid rgba(0,0,0,.10);
+
+        opacity: 0;
+        pointer-events: none;
+
+        transition: opacity .25s ease, transform .25s ease;
+    }
+
+    body.dark .nav-links {
+        background: #050505;
+        color: #f1f1f1;
+        border-color: rgba(255,255,255,.14);
+    }
+
+    .nav-links.open {
+        opacity: 1;
+        transform: translate(-50%, 0);
+        pointer-events: auto;
+    }
+
+    .nav-links ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1.1rem;
+        padding: 1.4rem;
+        text-align: center;
+    }
+}

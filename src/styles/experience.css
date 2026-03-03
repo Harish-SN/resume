@@ -1,0 +1,217 @@
+/* =========================================================
+   EXPERIENCE — Rounded glass box + sarcastic cards (stretched wider)
+   =======================================================*/
+
+#experience {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+
+}
+
+/* Section glass tuning (outer wrapper) */
+#experience.block.glass {
+    background: color-mix(in oklab, var(--glass) 90%, #fff 10%);
+    backdrop-filter: blur(16px) saturate(1.05);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .14),
+        inset 0 1px 0 rgba(255, 255, 255, .15);
+    border: 2px solid rgba(0, 0, 0, .05);
+    border-radius: 22px;
+}
+
+body.dark #experience.block.glass {
+    background: color-mix(in oklab, var(--glass-dark) 90%, #0a0a0a 10%);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, .6),
+        inset 0 1px 0 rgba(255, 255, 255, .06);
+    border: 2px solid rgba(255, 255, 255, .05);
+    border-radius: 22px;
+}
+
+/* Heading */
+#experience h2 {
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.8rem;
+    /* extra breathing space */
+    font-weight: 900;
+    letter-spacing: .3px;
+    position: relative;
+}
+
+#experience h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 80px;
+    height: 3px;
+    border-radius: 2px;
+    transform: translateX(-50%);
+    background: var(--accent);
+}
+
+body.dark #experience h2::after {
+    background: var(--accent-dark);
+}
+
+/* Timeline list */
+#experience .timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* ---- Cards inside ---- */
+#experience .timeline>li {
+    background: color-mix(in oklab, var(--glass) 92%, #fff 8%);
+    border: 2px solid color-mix(in oklab, var(--accent) 35%, transparent);
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, .10),
+        inset 0 0 0 1px rgba(255, 255, 255, .18);
+    position: relative;
+    transform: rotate(-.4deg);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+body.dark #experience .timeline>li {
+    background: color-mix(in oklab, var(--glass-dark) 92%, #0b0b0b 8%);
+    border-color: color-mix(in oklab, var(--accent-dark) 35%, transparent);
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, .35),
+        inset 0 0 0 1px rgba(255, 255, 255, .10);
+}
+
+/* Comic pin */
+#experience .timeline>li::before {
+    content: "✶";
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    font-size: .9rem;
+    color: var(--accent);
+    text-shadow: 0 0 6px color-mix(in oklab, var(--accent) 60%, transparent);
+}
+
+body.dark #experience .timeline>li::before {
+    color: var(--accent-dark);
+    text-shadow: 0 0 6px color-mix(in oklab, var(--accent-dark) 60%, transparent);
+}
+
+/* Hover */
+@media (hover: hover) and (pointer: fine) {
+    #experience .timeline>li:hover {
+        transform: rotate(.25deg) translateY(-3px);
+        box-shadow:
+            0 12px 24px rgba(0, 0, 0, .2),
+            0 0 0 1px color-mix(in oklab, var(--accent) 22%, transparent) inset;
+    }
+
+    body.dark #experience .timeline>li:hover {
+        box-shadow:
+            0 14px 30px rgba(0, 0, 0, .6),
+            0 0 0 1px color-mix(in oklab, var(--accent-dark) 22%, transparent) inset;
+    }
+}
+
+/* Role / dates */
+#experience .timeline>li>strong {
+    display: block;
+    font-size: 1.06rem;
+    font-weight: 900;
+    letter-spacing: .2px;
+    text-transform: uppercase;
+}
+
+#experience .timeline>li>em {
+    display: block;
+    margin-top: .2rem;
+    font-size: .92rem;
+    opacity: .8;
+}
+
+/* Bullets */
+#experience .timeline>li>ul {
+    margin: .65rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: .5rem;
+}
+
+#experience .timeline>li>ul li {
+    padding-left: 1.15rem;
+    position: relative;
+    line-height: 1.5;
+    font-size: .96rem;
+}
+
+#experience .timeline>li>ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    font-weight: 900;
+}
+
+body.dark #experience .timeline>li>ul li::before {
+    color: var(--accent-dark);
+}
+
+#experience .timeline>li>ul strong {
+    color: var(--accent);
+    font-weight: 800;
+}
+
+body.dark #experience .timeline>li>ul strong {
+    color: var(--accent-dark);
+}
+
+/* Links */
+#experience .timeline a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dashed currentColor;
+}
+
+#experience .timeline a:hover {
+    border-bottom-style: solid;
+}
+
+/* Desktop: two columns */
+@media (min-width: 900px) {
+    #experience .timeline {
+        display: block;
+        column-count: 2;
+        column-gap: 1.5rem;
+        /* more gap between columns */
+        margin-top: 1.25rem;
+    }
+
+    #experience .timeline>li {
+        display: inline-block;
+        width: 100%;
+        margin: 0 0 1.4rem;
+        break-inside: avoid;
+    }
+
+    #experience .timeline>li::before {
+        left: -6px;
+    }
+}
+
+/* Ultra-wide */
+@media (min-width: 1600px) {
+    #experience {
+        max-width: 1500px;
+        /* stretch more on big screens */
+    }
+}

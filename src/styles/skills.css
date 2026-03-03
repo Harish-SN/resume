@@ -1,0 +1,158 @@
+/* =========================================================
+   SKILLS — SARCASTIC COMIC STRIPS
+   =======================================================*/
+
+/* Grid stays same */
+.skills-comic .skill-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.4rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem;
+}
+
+/* Each card looks like a "comic panel" */
+.skills-comic .skill-card {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 1.2rem 1rem;
+    border: 3px dashed var(--accent);
+    box-shadow: 6px 6px 0 #000, inset 0 0 0 2px rgba(255, 255, 255, .2);
+    transform: rotate(-.8deg);
+    transition: transform .25s ease, box-shadow .25s ease;
+    position: relative;
+}
+
+body.dark .skills-comic .skill-card {
+    background: var(--glass-dark);
+    border-color: var(--accent-dark);
+    box-shadow: 6px 6px 0 #111, inset 0 0 0 2px rgba(255, 255, 255, .1);
+}
+
+/* On hover, card "overreacts" */
+.skills-comic .skill-card:hover {
+    transform: rotate(.9deg) scale(1.03);
+    box-shadow: 10px 10px 0 var(--accent), 0 6px 14px rgba(0, 0, 0, .3);
+}
+
+body.dark .skills-comic .skill-card:hover {
+    box-shadow: 10px 10px 0 var(--accent-dark), 0 6px 18px rgba(0, 0, 0, .5);
+}
+
+/* Header is comic loud */
+.skills-comic .skill-title {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-weight: 900;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: var(--accent);
+    text-shadow: 1px 1px 0 #000;
+    margin-bottom: .6rem;
+}
+
+body.dark .skills-comic .skill-title {
+    color: var(--accent-dark);
+}
+
+/* Icon = sarcastic badge */
+.skills-comic .skill-title i {
+    font-size: 1.2rem;
+    background: var(--accent);
+    color: #000;
+    padding: .4rem;
+    border-radius: 50%;
+    box-shadow: 2px 2px 0 #000;
+}
+
+body.dark .skills-comic .skill-title i {
+    background: var(--accent-dark);
+}
+
+/* Title text gets a sarcastic POW bubble */
+.skills-comic .title-text::after {
+    content: "💥";
+    margin-left: .4rem;
+    font-size: .95rem;
+    animation: wiggle 1.5s infinite;
+}
+
+@keyframes wiggle {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-12deg);
+    }
+
+    75% {
+        transform: rotate(12deg);
+    }
+}
+
+/* Pills look like stickers slapped on */
+.skills-comic .pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    list-style: none;
+}
+
+.skills-comic .pill {
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 6px;
+    padding: .45rem .7rem;
+    font-weight: 800;
+    font-size: .92rem;
+    text-transform: uppercase;
+    transform: rotate(-2deg);
+    box-shadow: 2px 2px 0 #000;
+    transition: transform .15s ease;
+}
+
+body.dark .skills-comic .pill {
+    background: #111;
+    color: var(--fg-dark);
+    border-color: var(--accent-dark);
+}
+
+.skills-comic .pill:hover {
+    transform: rotate(2deg) scale(1.1);
+    background: var(--accent);
+    color: #000;
+}
+
+body.dark .skills-comic .pill:hover {
+    background: var(--accent-dark);
+}
+
+/* Make pills scream sarcastically with ⚡ */
+.skills-comic .pill::after {
+    content: "⚡";
+    margin-left: .25rem;
+    opacity: .7;
+    font-size: .8rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+    .skills-comic .skill-card {
+        transform: none;
+    }
+
+    .skills-comic .skill-card:hover {
+        transform: scale(1.02);
+    }
+
+    .skills-comic .pill {
+        transform: none;
+    }
+}

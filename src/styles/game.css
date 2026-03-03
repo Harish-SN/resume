@@ -1,0 +1,328 @@
+/* =========================================================
+   6) MINI GAME (MOLEBOX) — RETRO ARCADE / CRT STYLE
+   =======================================================*/
+.molebox {
+    --crt-green: #9aff57;
+    --crt-amber: #ffda7b;
+    --crt-shadow: rgba(0, 0, 0, .35);
+
+    margin: 1.7rem 0;
+    padding: 1.2rem 1rem;
+    width: 308px;
+    border-radius: 12px;
+    position: relative;
+    background: var(--glass);
+    box-shadow:
+        0 10px 24px var(--crt-shadow),
+        inset 0 0 0 2px rgba(0, 0, 0, .15),
+        inset 0 0 0 4px rgba(255, 255, 255, .12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+body.dark .molebox {
+    background: var(--glass-dark);
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, .55),
+        inset 0 0 0 2px #131617,
+        inset 0 0 0 4px #050607;
+}
+
+/* scanlines + vignette */
+.molebox::before,
+.molebox::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.molebox::before {
+    background: repeating-linear-gradient(to bottom,
+            rgba(255, 255, 255, .04) 0,
+            rgba(255, 255, 255, .04) 1px,
+            transparent 2px,
+            transparent 3px);
+    mix-blend-mode: overlay;
+    opacity: .35;
+    animation: flicker .9s linear infinite;
+}
+
+.molebox::after {
+    background: radial-gradient(120% 80% at 50% 60%, transparent 55%, rgba(0, 0, 0, .65) 100%);
+}
+
+@keyframes flicker {
+    50% {
+        opacity: .28;
+    }
+}
+
+/* Grid rows */
+.toprow,
+.midrow,
+.botrow {
+    display: flex;
+    gap: .7rem;
+    margin: .22rem 0;
+}
+
+/* Holes */
+.hole {
+    width: 82px;
+    height: 82px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background:
+        radial-gradient(60% 55% at 50% 45%, #f3f3f3, #d6d6d6 70%),
+        repeating-linear-gradient(45deg, rgba(0, 0, 0, .05) 0 4px, rgba(255, 255, 255, .05) 4px 8px);
+    box-shadow:
+        0 0 0 2px #b0b0b0,
+        inset 0 6px 14px rgba(0, 0, 0, .15),
+        inset 0 -8px 14px rgba(255, 255, 255, .25);
+    transition: transform .12s ease, filter .12s ease;
+}
+
+.hole:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.06) contrast(1.02);
+}
+
+.hole:active {
+    transform: scale(.985);
+}
+
+body.dark .hole {
+    background:
+        radial-gradient(60% 55% at 50% 45%, #14191b, #0a0d0e 70%),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, .02) 0 4px, rgba(0, 0, 0, .02) 4px 8px);
+    box-shadow:
+        0 0 0 2px #1c2022,
+        inset 0 8px 16px rgba(0, 0, 0, .65),
+        inset 0 -8px 14px rgba(255, 255, 255, .04);
+}
+
+/* Click ripple */
+.hole::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: radial-gradient(circle, rgba(154, 255, 87, .45), transparent 60%);
+    filter: blur(1px);
+    opacity: 0;
+}
+
+.hole:active::after {
+    animation: phosphor .35s ease-out;
+}
+
+@keyframes phosphor {
+    0% {
+        transform: translate(-50%, -50%) scale(.2);
+        opacity: .9;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(5.5);
+        opacity: 0;
+    }
+}
+
+/* Dog sprite */
+.dog {
+    position: absolute;
+    left: 50%;
+    bottom: -78px;
+    transform: translateX(-50%);
+    width: 74px;
+    height: 74px;
+    pointer-events: none;
+    image-rendering: -webkit-optimize-contrast;
+    filter: drop-shadow(0 0 6px rgba(154, 255, 87, .35)) drop-shadow(0 6px 14px rgba(0, 0, 0, .55));
+    transition: bottom .18s ease;
+}
+
+.dog.up {
+    bottom: 4px;
+    animation: popCRT .22s ease-out;
+}
+
+@keyframes popCRT {
+    0% {
+        transform: translateX(-50%) translateY(3px) scale(.97);
+    }
+
+    60% {
+        transform: translateX(calc(-50% - .3px)) translateY(-1px) scale(1.01);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+}
+
+.hole.hit .dog {
+    animation: hitStutter .18s steps(2) both;
+}
+
+@keyframes hitStutter {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        transform: translateX(-49%) scale(.9);
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+/* HUD */
+.meters {
+    font-weight: 800;
+    letter-spacing: .3px;
+    margin: .85rem 0 .6rem;
+    text-align: center;
+    color: #0b2e0b;
+    text-shadow: 0 0 6px rgba(154, 255, 87, .28), 0 0 14px rgba(154, 255, 87, .18);
+}
+
+body.dark .meters {
+    color: var(--fg-dark);
+}
+
+/* Buttons (merged) */
+#startBtn,
+#restartBtn {
+    font-family: inherit;
+    font-weight: 700;
+    font-size: .95rem;
+    padding: .55rem 1.6rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    letter-spacing: .3px;
+    border: 2px solid transparent;
+    transition: background .25s, color .25s, border-color .25s, transform .15s;
+    box-shadow: 0 2px 6px #0002;
+}
+
+#startBtn {
+    background: var(--accent);
+    color: #000;
+}
+
+body.dark #startBtn {
+    background: var(--accent-dark);
+    color: #000;
+}
+
+#restartBtn {
+    background: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+body.dark #restartBtn {
+    color: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+
+#startBtn:hover,
+#restartBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px #0003;
+}
+
+#startBtn:active,
+#restartBtn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px #0002 inset;
+}
+
+/* =========================================================
+   Zoom-out Finale Overlay (shown when lives run out)
+   =======================================================*/
+.overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .82);
+    z-index: 999;
+    overflow: hidden;
+}
+
+.overlay.hide {
+    display: none !important;
+}
+
+/* Dog in overlay: no default animation; we trigger .boom */
+.zoomdog {
+    width: 120px;
+    height: 120px;
+    will-change: transform, opacity;
+    filter: drop-shadow(0 0 10px rgba(154, 255, 87, .5)) drop-shadow(0 14px 30px rgba(0, 0, 0, .6));
+    backface-visibility: hidden;
+}
+
+/* Play this when MISS_LIMIT reached */
+.zoomdog.boom {
+    animation: zoomout 1.6s cubic-bezier(.22, .86, .27, .98) forwards;
+}
+
+/* Big cinematic zoom-out */
+@keyframes zoomout {
+    0% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+        filter: drop-shadow(0 0 10px rgba(154, 255, 87, .55)) drop-shadow(0 14px 30px rgba(0, 0, 0, .6));
+    }
+
+    40% {
+        transform: scale(4) rotate(-2deg);
+        opacity: 0.95;
+    }
+
+    70% {
+        transform: scale(9) rotate(1deg);
+        opacity: 0.85;
+    }
+
+    100% {
+        transform: scale(12);
+        opacity: 0;
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+    }
+}
+
+/* =========================================================
+   Responsive
+   =======================================================*/
+@media (max-width: 360px) {
+    .hole {
+        width: 74px;
+        height: 74px;
+    }
+
+    .dog {
+        width: 66px;
+        height: 66px;
+        bottom: -66px;
+    }
+
+    .dog.up {
+        bottom: 4px;
+    }
+}
