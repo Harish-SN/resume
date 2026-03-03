@@ -1,24 +1,18 @@
-/* =========================================================
-   TOKENS / THEME
-   =======================================================*/
+
 :root {
-    --bg: #f7f6f3;          /* soft off-white */
+    --bg: #f7f6f3;
     --bg-dark: #111111;
 
-    --fg: #2a2a2a;          /* neutral charcoal */
+    --fg: #2a2a2a;
     --fg-dark: #e6e6e6;
 
-    --accent: #c96a1b;      /* muted amber */
-    --accent-dark: #8be28b; /* soft green */
+    --accent: #c96a1b;
+    --accent-dark: #8be28b;
 
     --glass: rgba(255, 255, 255, 0.35);
     --glass-dark: rgba(255, 255, 255, 0.08);
 }
 
-/* =========================================================
-   RESET / BASE
-   =======================================================*/
-   
 * {
     margin: 0;
     padding: 0;
@@ -40,10 +34,6 @@ body.dark {
     background: var(--bg-dark);
     color: var(--fg-dark);
 }
-
-/* =========================================================
-   BLOCKS / GLASS WRAPPER
-   =======================================================*/
 
 .block {
     padding: 4.5rem 2rem 4rem;
@@ -78,9 +68,6 @@ body.dark .block h2 {
     color: var(--accent-dark);
 }
 
-/* =========================================================
-   13) RESPONSIVE
-   =======================================================*/
 @media (max-width:750px) {
     .navbar ul {
         display: none;
