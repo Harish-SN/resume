@@ -19,7 +19,6 @@ export default function ChatWidget({ apiUrl }) {
     const q = question.trim();
     if (!q) return;
 
-    // client-side throttle (1.5s)
     const now = Date.now();
     if (now - lastSentRef.current < 1500) return;
     lastSentRef.current = now;
@@ -58,12 +57,10 @@ export default function ChatWidget({ apiUrl }) {
       ]);
     } finally {
       setLoading(false);
-      // ✅ cursor ALWAYS stays active
       requestAnimationFrame(() => inputRef.current?.focus());
     }
   }
 
-  // auto-scroll
   useEffect(() => {
     messagesRef.current?.scrollTo({
       top: messagesRef.current.scrollHeight,
