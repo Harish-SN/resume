@@ -6,7 +6,7 @@ This repository contains the source code for my personal resume website built us
 
 ## 🌐 Live Website
 
-Production URL: https://your-domain.com  
+Production URL: https://harish8.com  
 GitHub Repository: https://github.com/Harish-SN/resume
 
 ---
@@ -68,3 +68,75 @@ Frontend → API Gateway → Lambda → Response
 ---
 
 ## 🚀 Deployment Architecture
+
+GitHub → CodeBuild → S3 → CloudFront
+
+### Deployment Flow
+
+1. Code pushed to GitHub
+2. CodeBuild installs dependencies
+3. Production build generated (Vite dist/)
+4. Files synced to S3
+5. CloudFront cache invalidated
+
+Fully automated CI/CD pipeline.
+
+---
+
+## 🧪 Local Development
+
+Clone repository:
+git clone https://github.com/Harish-SN/resume.git
+cd resume
+
+Install dependencies: npm install
+
+Run development server: npm run dev
+
+Build for production: npm run build
+
+Preview production build: npm run preview
+
+---
+
+## 🔐 Security Considerations
+
+- No AWS credentials stored in repository
+- Environment variables handled securely
+- IAM roles follow least privilege principle
+- CloudFront enforces HTTPS
+- API Gateway rate limiting enabled
+
+---
+
+## 📈 Future Enhancements
+
+- Terraform-based infrastructure provisioning
+- Multi-environment deployment (dev/stage/prod)
+- Monitoring & logging improvements
+- Performance optimization audits
+- Custom domain with ACM SSL
+
+---
+
+## 👨‍💻 About Me
+
+Cloud & DevOps Engineer focused on:
+
+- AWS Architecture
+- CI/CD Automation
+- Infrastructure as Code
+- Kubernetes & Containers
+- Cloud Security Best Practices
+
+---
+
+## 📬 Contact
+
+Email: snharish85@gmail.com  
+GitHub: https://github.com/Harish-SN  
+LinkedIn: (Add your LinkedIn URL)
+
+---
+
+⭐ If you like this project, feel free to star the repository.
