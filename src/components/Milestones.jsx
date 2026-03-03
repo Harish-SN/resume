@@ -98,8 +98,6 @@ export default function Milestones() {
     useEffect(() => {
         const wrapper = wrapperRef.current;
         if (!wrapper) return;
-
-        // Reveal-on-enter (horizontal context)
         const io = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -117,7 +115,6 @@ export default function Milestones() {
             .querySelectorAll(".timeline-horz__item")
             .forEach((el) => io.observe(el));
 
-        // Wheel → horizontal scroll
         const onWheel = (e) => {
             if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
                 e.preventDefault();
@@ -126,14 +123,13 @@ export default function Milestones() {
         };
         wrapper.addEventListener("wheel", onWheel, { passive: false });
 
-        // Keyboard navigation
         const onKeyDown = (e) => {
             if (e.key === "ArrowRight") wrapper.scrollBy({ left: 320, behavior: "smooth" });
             if (e.key === "ArrowLeft") wrapper.scrollBy({ left: -320, behavior: "smooth" });
         };
         window.addEventListener("keydown", onKeyDown);
 
-        // Scroll progress
+
         const updateProgress = () => {
             const max = wrapper.scrollWidth - wrapper.clientWidth;
             const pct = max > 0 ? (wrapper.scrollLeft / max) * 100 : 0;
