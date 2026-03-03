@@ -1,6 +1,3 @@
-/* =========================================================
-   EXPERIENCE — Rounded glass box + sarcastic cards (stretched wider)
-   =======================================================*/
 
 #experience {
     max-width: 1400px;
@@ -12,7 +9,6 @@
 
 }
 
-/* Section glass tuning (outer wrapper) */
 #experience.block.glass {
     background: color-mix(in oklab, var(--glass) 90%, #fff 10%);
     backdrop-filter: blur(16px) saturate(1.05);
@@ -30,12 +26,10 @@ body.dark #experience.block.glass {
     border-radius: 22px;
 }
 
-/* Heading */
 #experience h2 {
     text-align: center;
     margin-top: 1.5rem;
     margin-bottom: 1.8rem;
-    /* extra breathing space */
     font-weight: 900;
     letter-spacing: .3px;
     position: relative;
@@ -57,7 +51,6 @@ body.dark #experience h2::after {
     background: var(--accent-dark);
 }
 
-/* Timeline list */
 #experience .timeline {
     list-style: none;
     padding: 0;
@@ -67,7 +60,6 @@ body.dark #experience h2::after {
     gap: 1rem;
 }
 
-/* ---- Cards inside ---- */
 #experience .timeline>li {
     background: color-mix(in oklab, var(--glass) 92%, #fff 8%);
     border: 2px solid color-mix(in oklab, var(--accent) 35%, transparent);
@@ -89,7 +81,6 @@ body.dark #experience .timeline>li {
         inset 0 0 0 1px rgba(255, 255, 255, .10);
 }
 
-/* Comic pin */
 #experience .timeline>li::before {
     content: "✶";
     position: absolute;
@@ -105,7 +96,6 @@ body.dark #experience .timeline>li::before {
     text-shadow: 0 0 6px color-mix(in oklab, var(--accent-dark) 60%, transparent);
 }
 
-/* Hover */
 @media (hover: hover) and (pointer: fine) {
     #experience .timeline>li:hover {
         transform: rotate(.25deg) translateY(-3px);
@@ -121,7 +111,6 @@ body.dark #experience .timeline>li::before {
     }
 }
 
-/* Role / dates */
 #experience .timeline>li>strong {
     display: block;
     font-size: 1.06rem;
@@ -137,7 +126,6 @@ body.dark #experience .timeline>li::before {
     opacity: .8;
 }
 
-/* Bullets */
 #experience .timeline>li>ul {
     margin: .65rem 0 0;
     padding: 0;
@@ -175,7 +163,6 @@ body.dark #experience .timeline>li>ul strong {
     color: var(--accent-dark);
 }
 
-/* Links */
 #experience .timeline a {
     color: inherit;
     text-decoration: none;
@@ -186,13 +173,11 @@ body.dark #experience .timeline>li>ul strong {
     border-bottom-style: solid;
 }
 
-/* Desktop: two columns */
 @media (min-width: 900px) {
     #experience .timeline {
         display: block;
         column-count: 2;
         column-gap: 1.5rem;
-        /* more gap between columns */
         margin-top: 1.25rem;
     }
 
@@ -208,10 +193,8 @@ body.dark #experience .timeline>li>ul strong {
     }
 }
 
-/* Ultra-wide */
 @media (min-width: 1600px) {
     #experience {
         max-width: 1500px;
-        /* stretch more on big screens */
     }
 }
