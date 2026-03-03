@@ -13,7 +13,7 @@ export default function Contact() {
                     <i className="fa-brands fa-github" /> GitHub
                 </a>
                 <a
-                    href="https://www.linkedin.com/in/harish-sn8/"
+                    href="https://www.linkedin.com/in/harishsudalaimani/"
                     target="_blank"
                     rel="noreferrer"
                 >
