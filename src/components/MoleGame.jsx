@@ -1,4 +1,4 @@
-// MoleGame.jsx — Zoom-out finale when lives end
+
 import React, { useEffect, useRef, useState } from "react";
 
 const MISS_LIMIT = 3;
@@ -62,8 +62,7 @@ export default function MoleGame() {
     };
 
     /**
-     * End the game.
-     * @param {boolean} withZoom - when true, show overlay and play zoom-out dog.
+      @param {boolean} withZoom
      */
     const endGame = (withZoom = false) => {
         setPlaying(false);
@@ -74,27 +73,17 @@ export default function MoleGame() {
             const overlay = overlayRef.current;
             const z = overlay?.querySelector(".zoomdog");
             if (overlay && z) {
-                // show overlay
                 overlay.classList.remove("hide");
-
-                // reset + trigger the animation
                 z.classList.remove("boom");
-                // reflow to restart animation
-                // eslint-disable-next-line no-unused-expressions
                 z.offsetWidth;
                 z.classList.add("boom");
-
-                // bark sfx (optional)
                 if (barkRef.current) {
                     barkRef.current.currentTime = 0;
                     barkRef.current.play().catch(() => { });
                 }
-
-                // hide overlay when animation completes
                 setTimeout(() => overlay.classList.add("hide"), 1650);
             }
         } else {
-            // ensure overlay hidden if stopping manually
             overlayRef.current?.classList.add("hide");
         }
     };
@@ -114,7 +103,7 @@ export default function MoleGame() {
         } else {
             setMiss((m) => {
                 const next = m + 1;
-                if (next >= MISS_LIMIT) endGame(true); // <-- trigger zoom finale
+                if (next >= MISS_LIMIT) endGame(true);
                 return next;
             });
         }
@@ -166,12 +155,10 @@ export default function MoleGame() {
                 )}
             </div>
 
-            {/* Overlay for zoom-out finale */}
             <div id="overlay" ref={overlayRef} className="overlay hide">
                 <img src={DOG_SRC} className="zoomdog" alt="Dog" />
             </div>
 
-            {/* optional sfx */}
             <audio id="bark" ref={barkRef} src="/bark.mp3" preload="auto" />
         </>
     );
