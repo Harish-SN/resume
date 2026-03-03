@@ -16,7 +16,7 @@ export default function Navbar() {
             
             <div className="nav-side left">
                 <div className="brand brand-terminal" title="cloud.engineer_">
-                    cloud.engineer<span className="cursor-blink">_</span>
+                    cloud-Native Architect<span className="cursor-blink">_</span>
                 </div>
             </div>
 
