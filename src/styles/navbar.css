@@ -1,6 +1,4 @@
-/* =========================================================
-   NAVBAR
-   =======================================================*/
+
 .navbar {
     position: fixed;
     inset: 0 0 auto 0;
@@ -18,7 +16,6 @@ body.dark .navbar {
     background: var(--glass-dark);
 }
 
-/* Side containers */
 .nav-side {
     display: flex;
     align-items: center;
@@ -33,7 +30,6 @@ body.dark .navbar {
     gap: .8rem;
 }
 
-/* Brand */
 .brand {
     font-weight: 600;
     font-size: 1.25rem;
@@ -56,9 +52,6 @@ body.dark .brand {
     50% { opacity: 0; }
 }
 
-/* =========================================================
-   CENTER NAV
-   =======================================================*/
 .nav-links {
     justify-self: center;
 }
@@ -76,9 +69,6 @@ body.dark .brand {
     position: relative;
 }
 
-/* =========================================================
-   THEME TOGGLE
-   =======================================================*/
 .toggle input {
     display: none;
 }
@@ -113,9 +103,6 @@ body.dark .thumb {
 input:checked + .thumb .sun { opacity: 0; }
 input:checked + .thumb .moon { opacity: 1; }
 
-/* =========================================================
-   HAMBURGER
-   =======================================================*/
 .hamburger {
     display: none;
     width: 36px;
@@ -154,9 +141,6 @@ body.dark .hamburger {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* =========================================================
-   MOBILE DRAWER (SOLID + NARROW)
-   =======================================================*/
 @media (max-width: 780px) {
 
     .navbar {
@@ -171,7 +155,6 @@ body.dark .hamburger {
         position: fixed;
         top: 64px;
 
-        /* 🔥 NARROW + CENTERED */
         left: 50%;
         transform: translate(-50%, -10px);
 
@@ -180,7 +163,6 @@ body.dark .hamburger {
 
         z-index: 999;
 
-        /* Light mode */
         background: #ffffff;
         color: #111;
 
