@@ -1,12 +1,70 @@
-# React + Vite
+# 🚀 Harish SN — Cloud & DevOps Engineer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the source code for my personal resume website built using **React + Vite** and deployed on **AWS S3 + CloudFront** with automated CI/CD.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Website
 
-## Expanding the ESLint configuration
+Production URL: https://your-domain.com  
+GitHub Repository: https://github.com/Harish-SN/resume
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- React
+- Vite
+- JavaScript (ES6+)
+- CSS
+- Responsive UI Design
+
+### Cloud & DevOps
+- AWS S3 (Static Hosting)
+- AWS CloudFront (CDN)
+- AWS CodeBuild (CI)
+- AWS CodePipeline (CD)
+- AWS Lambda (Backend Chat API)
+- AWS API Gateway
+- IAM (Least Privilege Access)
+- GitHub (Version Control)
+
+---
+
+## 📂 Project Structure
+
+src/
+components/
+styles/
+public/
+buildspec.yml
+vite.config.js
+
+Main UI Sections:
+- Navbar
+- Hero
+- Skills
+- Experience
+- Certificates
+- Projects
+- Milestones
+- Contact
+- ChatWidget (Serverless backend integration)
+
+---
+
+## 💬 Chat Widget Architecture
+
+The chat feature uses:
+
+Frontend → API Gateway → Lambda → Response
+
+- Secure IAM role configuration
+- No secrets exposed in frontend
+- API throttling enabled
+- CORS configured properly
+
+---
+
+## 🚀 Deployment Architecture
