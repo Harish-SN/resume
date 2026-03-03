@@ -1,4 +1,4 @@
-/* Horizontal sarcastic vibe */
+
 .contact-links.sarcastic {
     display: flex;
     justify-content: center;
@@ -7,7 +7,6 @@
     margin-top: 1.6rem;
 }
 
-/* Funky comic-sticker buttons */
 .contact-links.sarcastic a {
     display: inline-flex;
     align-items: center;
@@ -32,7 +31,6 @@ body.dark .contact-links.sarcastic a {
     box-shadow: 4px 4px 0 #000;
 }
 
-/* Hover = over-exaggerated sarcasm */
 .contact-links.sarcastic a:hover {
     transform: rotate(1.2deg) scale(1.05);
     background: var(--accent);
@@ -45,7 +43,6 @@ body.dark .contact-links.sarcastic a:hover {
     color: #000;
 }
 
-/* Emoji sarcasm */
 .contact-links.sarcastic a::after {
     content: "⚡";
     margin-left: .3rem;
@@ -53,7 +50,6 @@ body.dark .contact-links.sarcastic a:hover {
     opacity: .7;
 }
 
-/* Responsive: stack when narrow */
 @media (max-width: 640px) {
     .contact-links.sarcastic {
         flex-direction: column;
