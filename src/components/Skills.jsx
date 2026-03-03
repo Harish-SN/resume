@@ -1,6 +1,5 @@
 import React from "react";
 
-/** Reusable card */
 function SkillCard({ title, icon, items, tall = false, grid = false }) {
     return (
         <div
