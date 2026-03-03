@@ -1,6 +1,3 @@
-/* =========================================================
-   Funky Harish Footer Styles (Scoped)
-   =======================================================*/
 
 .hf-wrapper {
     padding: 3rem 2rem;
@@ -20,7 +17,6 @@ body:not(.dark) .hf-wrapper {
     box-shadow: 0 0 20px #ff7a0033;
 }
 
-/* CENTRE ALL CONTENT */
 .hf-footer-centre {
     display: flex;
     flex-direction: column;
@@ -28,7 +24,6 @@ body:not(.dark) .hf-wrapper {
     text-align: center;
 }
 
-/* BRANDING */
 .hf-brand {
     margin-bottom: 1.5rem;
 }
@@ -57,7 +52,6 @@ body:not(.dark) .hf-tagline {
     color: var(--fg);
 }
 
-/* META */
 .hf-meta {
     margin: 1.5rem 0;
     font-size: 1rem;
@@ -72,7 +66,6 @@ body:not(.dark) .hf-meta {
     line-height: 1.6;
 }
 
-/* Rainbow / glitch word like “React” */
 .rainbow {
     position: relative;
     font-weight: bold;
@@ -83,11 +76,9 @@ body:not(.dark) .hf-meta {
 
 body:not(.dark) .rainbow {
     color: var(--fg);
-    /* ensures high contrast on cream background */
     text-shadow: 1px 0 var(--accent), -1px 0 #ff0080, 2px 0 #00ffee;
 }
 
-/* TICKER */
 .hf-ticker {
     width: 100%;
     overflow: hidden;
@@ -113,7 +104,6 @@ body:not(.dark) .hf-ticker-text {
     color: var(--accent);
 }
 
-/* DATE */
 .hf-footer-date {
     margin-top: 1.8rem;
     font-size: 0.9rem;
@@ -125,7 +115,6 @@ body:not(.dark) .hf-footer-date {
     color: var(--accent);
 }
 
-/* BOTTOM TEXT */
 .hf-footer-bottom {
     margin-top: 0.7rem;
     font-size: 0.8rem;
@@ -138,7 +127,6 @@ body:not(.dark) .hf-footer-bottom {
     opacity: .75;
 }
 
-/* ANIMATIONS */
 @keyframes pulse-glow {
 
     0%,
@@ -197,7 +185,6 @@ body:not(.dark) .hf-footer-bottom {
     }
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .hf-wrapper {
         padding: 2rem 1.5rem;
