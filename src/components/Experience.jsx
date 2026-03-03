@@ -1,4 +1,4 @@
-// src/components/Experience.jsx
+
 import React from "react";
 
 export default function Experience() {
@@ -8,7 +8,6 @@ export default function Experience() {
 
             <ul className="timeline">
 
-                {/* XamBook */}
                 <li>
                     <strong>Founder • Cloud / DevOps / Backend Engineer</strong><br />
                     <em>XamBook.com — 2023–Present</em>
@@ -80,7 +79,6 @@ export default function Experience() {
                     </ul>
                 </li>
 
-                {/* Raspberry Pi NAS */}
                 <li>
                     <strong>Hybrid Cloud Storage Engineering</strong><br />
                     <em>2023–Present</em>
@@ -98,7 +96,6 @@ export default function Experience() {
                     </ul>
                 </li>
 
-                {/* Generative AI */}
                 <li>
                     <strong>Generative AI Engineering</strong><br />
                     <em>2024–Present</em>
@@ -119,7 +116,6 @@ export default function Experience() {
                     </ul>
                 </li>
 
-                {/* Ongoing */}
                 <li>
                     <strong>Platform Reliability & Operations</strong><br />
                     <em>2023–Present</em>
@@ -133,7 +129,6 @@ export default function Experience() {
                     </ul>
                 </li>
 
-                {/* Security */}
                 <li>
                     <strong>Cloud & Application Security Research</strong><br />
                     <em>2024–Present</em>
@@ -151,7 +146,6 @@ export default function Experience() {
                     </ul>
                 </li>
 
-                {/* Portfolio */}
                 <li>
                     <strong>React Portfolio Developer</strong>
 
