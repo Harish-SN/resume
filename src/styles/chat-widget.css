@@ -1,4 +1,3 @@
-
 .chat-root {
   position: fixed;
   bottom: calc(18px + env(safe-area-inset-bottom));
