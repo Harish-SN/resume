@@ -1,19 +1,14 @@
-/* =========================================================
-   CHAT ROOT
-   =======================================================*/
+
 .chat-root {
   position: fixed;
   bottom: calc(18px + env(safe-area-inset-bottom));
   right: 18px;
-  z-index: 60; /* below navbar drawer, above content */
+  z-index: 60;
   font-family: "JetBrains Mono", monospace;
 
   -webkit-tap-highlight-color: transparent;
 }
 
-/* =========================================================
-   FLOATING BUTTON
-   =======================================================*/
 .chat-toggle {
   width: 56px;
   height: 56px;
@@ -41,9 +36,6 @@ body.dark .chat-toggle {
   box-shadow: 0 12px 32px rgba(0,0,0,.28);
 }
 
-/* =========================================================
-   CHAT PANEL (DESKTOP)
-   =======================================================*/
 .chat-panel {
   position: absolute;
   bottom: 76px;
@@ -85,9 +77,6 @@ body.dark .chat-panel {
   }
 }
 
-/* =========================================================
-   MESSAGES
-   =======================================================*/
 .chat-messages {
   flex: 1;
   padding: 14px;
@@ -137,9 +126,6 @@ body.dark .msg.bot .bubble {
   border-radius: 14px 14px 6px 14px;
 }
 
-/* =========================================================
-   INPUT
-   =======================================================*/
 .chat-input {
   display: flex;
   gap: 8px;
@@ -162,7 +148,7 @@ body.dark .chat-input {
   border: 1px solid rgba(0,0,0,.08);
   font-family: inherit;
 
-  font-size: 16px; /* prevents iOS zoom */
+  font-size: 16px;
   -webkit-appearance: none;
 }
 
@@ -177,9 +163,6 @@ body.dark .chat-input {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* =========================================================
-   MOBILE – CLEAN & INTENTIONAL
-   =======================================================*/
 @media (max-width: 600px) {
 
   .chat-root {
