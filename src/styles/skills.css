@@ -1,8 +1,4 @@
-/* =========================================================
-   SKILLS — SARCASTIC COMIC STRIPS
-   =======================================================*/
 
-/* Grid stays same */
 .skills-comic .skill-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -12,7 +8,6 @@
     padding: 1rem;
 }
 
-/* Each card looks like a "comic panel" */
 .skills-comic .skill-card {
     background: var(--glass);
     backdrop-filter: blur(10px);
@@ -31,7 +26,6 @@ body.dark .skills-comic .skill-card {
     box-shadow: 6px 6px 0 #111, inset 0 0 0 2px rgba(255, 255, 255, .1);
 }
 
-/* On hover, card "overreacts" */
 .skills-comic .skill-card:hover {
     transform: rotate(.9deg) scale(1.03);
     box-shadow: 10px 10px 0 var(--accent), 0 6px 14px rgba(0, 0, 0, .3);
@@ -41,7 +35,6 @@ body.dark .skills-comic .skill-card:hover {
     box-shadow: 10px 10px 0 var(--accent-dark), 0 6px 18px rgba(0, 0, 0, .5);
 }
 
-/* Header is comic loud */
 .skills-comic .skill-title {
     display: flex;
     align-items: center;
@@ -59,7 +52,6 @@ body.dark .skills-comic .skill-title {
     color: var(--accent-dark);
 }
 
-/* Icon = sarcastic badge */
 .skills-comic .skill-title i {
     font-size: 1.2rem;
     background: var(--accent);
@@ -73,7 +65,6 @@ body.dark .skills-comic .skill-title i {
     background: var(--accent-dark);
 }
 
-/* Title text gets a sarcastic POW bubble */
 .skills-comic .title-text::after {
     content: "💥";
     margin-left: .4rem;
@@ -97,7 +88,6 @@ body.dark .skills-comic .skill-title i {
     }
 }
 
-/* Pills look like stickers slapped on */
 .skills-comic .pill-list {
     display: flex;
     flex-wrap: wrap;
@@ -134,7 +124,6 @@ body.dark .skills-comic .pill:hover {
     background: var(--accent-dark);
 }
 
-/* Make pills scream sarcastically with ⚡ */
 .skills-comic .pill::after {
     content: "⚡";
     margin-left: .25rem;
@@ -142,7 +131,6 @@ body.dark .skills-comic .pill:hover {
     font-size: .8rem;
 }
 
-/* Responsive tweaks */
 @media (max-width: 640px) {
     .skills-comic .skill-card {
         transform: none;
