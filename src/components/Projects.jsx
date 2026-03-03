@@ -1,4 +1,4 @@
-// src/components/Projects.jsx
+
 import React from "react";
 
 export default function Projects() {
@@ -12,7 +12,6 @@ export default function Projects() {
 
             <div className="card-grid">
 
-                {/* XamBook */}
                 <a
                     className="proj"
                     href="https://xambook.com"
@@ -36,7 +35,6 @@ export default function Projects() {
                     <span className="proj-cta">Click to view →</span>
                 </a>
 
-                {/* brewBar */}
                 <a
                     className="proj"
                     href="https://pypi.org/project/brewbar/"
@@ -54,7 +52,6 @@ export default function Projects() {
                     <span className="proj-cta">Click to view →</span>
                 </a>
 
-                {/* Pinglo */}
                 <a
                     className="proj"
                     href="https://github.com/Harish-SN/pinglo"
@@ -71,7 +68,6 @@ export default function Projects() {
                     <span className="proj-cta">Click to view →</span>
                 </a>
 
-                {/* Sticky Notes */}
                 <a
                     className="proj"
                     href="https://note.harish8.com"
@@ -89,7 +85,6 @@ export default function Projects() {
                     <span className="proj-cta">Click to view →</span>
                 </a>
 
-                {/* DevBook */}
                 <a
                     className="proj"
                     href="https://devbook.harish8.com"
@@ -106,7 +101,6 @@ export default function Projects() {
                     <span className="proj-cta">Click to view →</span>
                 </a>
 
-                {/* QR Generator */}
                 <a
                     className="proj"
                     href="https://qrcode.harish8.com"
@@ -123,7 +117,6 @@ export default function Projects() {
                     <span className="proj-cta">Click to view →</span>
                 </a>
 
-                {/* Art Hub */}
                 <a
                     className="proj"
                     href="https://github.com/Harish-SN/art-hub"
@@ -140,7 +133,6 @@ export default function Projects() {
                     <span className="proj-cta">Click to view →</span>
                 </a>
 
-                {/* Study Hub */}
                 <a
                     className="proj"
                     href="https://github.com/Harish-SN/study-hub"
@@ -157,7 +149,6 @@ export default function Projects() {
                     <span className="proj-cta">Click to view →</span>
                 </a>
 
-                {/* Resume Hub */}
                 <a
                     className="proj"
                     href="https://github.com/Harish-SN/resume-hub"
