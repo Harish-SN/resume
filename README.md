@@ -134,8 +134,7 @@ Cloud & DevOps Engineer focused on:
 ## 📬 Contact
 
 Email: snharish85@gmail.com  
-GitHub: https://github.com/Harish-SN  
-LinkedIn: (Add your LinkedIn URL)
+GitHub: https://github.com/Harish-SN
 
 ---
 
