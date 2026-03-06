@@ -2,12 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import MoleGame from './MoleGame.jsx';
 
 const words = [
-    "Cloud Architecture on AWS",
-    "Designing Scalable Systems",
-    "Building Production Backends",
-    "Operating Reliable Infrastructure",
-    "Serverless & Container Native",
-    "From EC2 to EKS",
+  "Kubernetes & Cloud-Native Infrastructure",
+  "Operating Production Kubernetes Platforms",
+  "Designing Distributed Systems",
+  "AWS Architecture & Infrastructure",
+  "Containers, Helm & GitOps",
+  "From Kubernetes to EKS"
 ];
 
 export default function Hero() {
