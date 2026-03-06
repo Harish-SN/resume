@@ -20,7 +20,7 @@ export default function Certificates() {
         title: "Kubernetes and Cloud Native Associate (KCNA)",
         issuer: "Cloud Native Computing Foundation",
         date: "2026",
-        link: "YOUR_CREDLY_BADGE_LINK",
+        link: "https://www.credly.com/earner/earned/badge/547bdfe4-b9a7-42b1-bdcb-3acc2332f7be",
         img: "/kcna.png"
        }
     ];
