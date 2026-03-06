@@ -15,7 +15,14 @@ export default function Certificates() {
         date: "2026",
         link: "https://www.credly.com/earner/earned/badge/e2dee9fd-c02f-40db-83a5-67af7e420994",
         img: "/terraform-associate.png"
-        }
+        },
+        {
+        title: "Kubernetes and Cloud Native Associate (KCNA)",
+        issuer: "Cloud Native Computing Foundation",
+        date: "2026",
+        link: "YOUR_CREDLY_BADGE_LINK",
+        img: "/kcna.png"
+       }
     ];
 
     return (
