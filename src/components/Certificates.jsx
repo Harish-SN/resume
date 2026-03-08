@@ -12,7 +12,7 @@ export default function Certificates() {
         {
             title: "HashiCorp Certified: Terraform Associate (004)",
             issuer: "HashiCorp",
-            date: "2026",
+	    date: "2026",
             link: "https://www.credly.com/earner/earned/badge/e2dee9fd-c02f-40db-83a5-67af7e420994",
             img: "/terraform-associate.png"
         },
