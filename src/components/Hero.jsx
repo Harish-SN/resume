@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import MoleGame from './MoleGame.jsx';
-
 const words = [
   "Kubernetes & Cloud-Native Infrastructure",
   "Operating Production Kubernetes Platforms",
@@ -9,7 +8,6 @@ const words = [
   "Containers, Helm & GitOps",
   "From Kubernetes to EKS"
 ];
-
 export default function Hero() {
     const txtRef = useRef(null);
     const [blink, setBlink] = useState(true);
@@ -18,7 +16,6 @@ export default function Hero() {
         const cur = setInterval(() => setBlink(v => !v), 500);
         return () => clearInterval(cur);
     }, []);
-
     useEffect(() => {
         let w = 0, i = 0, dir = 1, t;
         const loop = () => {
@@ -30,7 +27,6 @@ export default function Hero() {
         loop();
         return () => clearTimeout(t);
     }, []);
-
     return (
         <section id="home" className="hero">
             <h1>Hello, I’m <span>Harish</span></h1>
@@ -47,3 +43,4 @@ export default function Hero() {
         </section>
     );
 }
+
