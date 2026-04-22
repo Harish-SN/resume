@@ -7,7 +7,6 @@
     max-width: 1200px;
     padding: 1rem;
 }
-
 .skills-comic .skill-card {
     background: var(--glass);
     backdrop-filter: blur(10px);
