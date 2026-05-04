@@ -12,9 +12,16 @@ export default function Certificates() {
         {
             title: "HashiCorp Certified: Terraform Associate (004)",
             issuer: "HashiCorp",
-	    date: "2026",
+	        date: "2026",
             link: "https://www.credly.com/earner/earned/badge/e2dee9fd-c02f-40db-83a5-67af7e420994",
             img: "/terraform-associate.png"
+        },
+        {
+            title: "Certified Kubernetes Application Developer (CKAD)",
+            issuer: "Cloud Native Computing Foundation",
+	        date: "2026",
+            link: "https://www.credly.com/badges/3746f024-c3b0-473e-b0cc-808f18075c35/public_url",
+            img: "/ckad.png"
         },
         {
             title: "Kubernetes and Cloud Native Associate (KCNA)",
