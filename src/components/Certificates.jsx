@@ -6,7 +6,7 @@ export default function Certificates() {
             title: "AWS Certified Solutions Architect – Professional",
             issuer: "Amazon Web Services",
             date: "2026",
-            link: "https://www.credly.com/earner/earned/badge/ded4dfbc-ca13-45f9-83f7-ddaffe6eea59",
+            link: "https://www.credly.com/badges/ded4dfbc-ca13-45f9-83f7-ddaffe6eea59/public_url",
             img: "/aws-saa.png"
         },
         {
@@ -27,14 +27,14 @@ export default function Certificates() {
             title: "Kubernetes and Cloud Native Associate (KCNA)",
             issuer: "Cloud Native Computing Foundation",
             date: "2026",
-            link: "https://www.credly.com/earner/earned/badge/547bdfe4-b9a7-42b1-bdcb-3acc2332f7be",
+            link: "https://www.credly.com/badges/547bdfe4-b9a7-42b1-bdcb-3acc2332f7be/public_url",
             img: "/kcna.png"
        },
        {
             title: "HashiCorp Certified: Terraform Associate (004)",
             issuer: "HashiCorp",
 	        date: "2026",
-            link: "https://www.credly.com/earner/earned/badge/e2dee9fd-c02f-40db-83a5-67af7e420994",
+            link: "https://www.credly.com/badges/e2dee9fd-c02f-40db-83a5-67af7e420994/public_url",
             img: "/terraform-associate.png"
         }
     ];
