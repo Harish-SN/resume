@@ -24,6 +24,13 @@ export default function Certificates() {
             img: "/kcna.png"
        },
        {
+            title: "Kubernetes and Cloud Native Associate (KCNA)",
+            issuer: "Cloud Native Computing Foundation",
+            date: "2026",
+            link: "https://www.credly.com/earner/earned/badge/547bdfe4-b9a7-42b1-bdcb-3acc2332f7be",
+            img: "/kcna.png"
+       },
+       {
             title: "HashiCorp Certified: Terraform Associate (004)",
             issuer: "HashiCorp",
 	        date: "2026",
