@@ -17,11 +17,11 @@ export default function Certificates() {
             img: "/ckad.png"
         },
         {
-            title: "Kubernetes and Cloud Native Associate (KCNA)",
+            title: "Kubernetes and Cloud Native Security Associate (KCSA)",
             issuer: "Cloud Native Computing Foundation",
             date: "2026",
-            link: "https://www.credly.com/earner/earned/badge/547bdfe4-b9a7-42b1-bdcb-3acc2332f7be",
-            img: "/kcna.png"
+            link: "https://www.credly.com/badges/d3e952e5-8c80-4f81-8dfb-4ed896cbc677/public_url",
+            img: "/kcsa.png"
        },
        {
             title: "Kubernetes and Cloud Native Associate (KCNA)",
